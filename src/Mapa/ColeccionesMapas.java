@@ -1,4 +1,4 @@
-package libreria;
+package Mapa;
 
 import java.util.*;
 

@@ -4,11 +4,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Locale;
-import java.util.Stack;
 
 /**
  *
- * @author djunc
+ * @author Sergio Morillas Carmona
  */
 public class Fechas {
 

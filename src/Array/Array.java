@@ -1,4 +1,4 @@
-package libreria;
+package Array;
 
 import static java.lang.Integer.MAX_VALUE;
 
@@ -31,16 +31,12 @@ public class Array {
      * @return Array ordenado y con los valores de los dos arrays anteriores
      */
     public static int[] fusionaArraysOrdenados(int[] array1, int[] array2) {
-
         //Contadores individuales de cada array
         int cont1 = 0, cont2 = 0;
-
         int[] aux1 = array1;
         int[] aux2 = array2;
-
         //Declaramos el nuevo array con el tamaño de los dos arrays a fusionar
         int[] arrayFusion = new int[array1.length + array2.length];
-
         //Fusionamos los Arrays en orden
         for (int i = 0; i < arrayFusion.length; i++) {
             if (aux1[cont1] < array2[cont2]) {
@@ -66,7 +62,6 @@ public class Array {
      * @param matriz
      * @return
      */
-    //FUNCION QUE DEVUELVE UNA MATRIZ CON LAS SUMAS DE SUS FILAS Y COLUMNAS
     public static int[][] sumaFilasColumnas(int[][] matriz) {
         for (int filas = 0; filas < matriz.length; filas++) {
             for (int columnas = 0; columnas < matriz[columnas].length; columnas++) {
@@ -96,10 +91,6 @@ public class Array {
     }
 
     /**
-     *
-     * @param array
-     */
-    /**
      * Funcion que devuelve un array de doubles separado por <b>','</b> y
      * acabando con un <b>'.'</b>
      *
@@ -124,7 +115,6 @@ public class Array {
      * @param matriz Matriz a recibir
      * @return La cadena con los valores de la matriz
      */
-    //FUNCION QUE MUESTRA EL CONTENIDO DE UNA MATRIZ
     public static String muestraMatriz(int[][] matriz) {
         StringBuilder sb = new StringBuilder();
         for (int filas = 0; filas < matriz.length; filas++) {

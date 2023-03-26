@@ -10,7 +10,7 @@ import java.util.Stack;
  *
  * @author djunc
  */
-public class LibreriaFechas {
+public class Fechas {
 
     public static boolean esBisiesto(String fecha) {
         LocalDate date = LocalDate.parse(fecha);
@@ -85,23 +85,4 @@ public class LibreriaFechas {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("d 'de' MMMM 'del' yyyy", new Locale("es", "ES"));
         return localDate.format(dateTimeFormatter);
     }
-    
-  
-
-    public static boolean estaEquilibrada(String formula) {
-        Stack<Character> pila = new Stack<>();
-        for (int i = 0; i < formula.length(); i++) {
-            char c = formula.charAt(i);
-            if (c == '(') {
-                pila.push(c);
-            } else if (c == ')') {
-                if (pila.empty() || pila.pop() != '(') {
-                    return false;
-                }
-            }
-        }
-        return pila.empty();
-    }
-
-
 }

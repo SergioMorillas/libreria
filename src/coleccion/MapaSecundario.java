@@ -1,4 +1,4 @@
-package libreriaAparte;
+package coleccion;
 
 import java.lang.reflect.Array;
 import java.util.*;
@@ -6,49 +6,10 @@ import java.util.function.Predicate;
 
 /**
  *
- * @author djunc
+ * @author Sergio
  */
-public class Librerias {
-
-    /**
-     * Comprueba si un número es primo.
-     *
-     * @param n El número a comprobar.
-     * @return true si el número es primo, false si no lo es.
-     */
-    public static boolean esPrimo(int n) {
-        if (n <= 1) {
-            return false;
-        }
-        if (n <= 3) {
-            return true;
-        }
-        if (n % 2 == 0 || n % 3 == 0) {
-            return false;
-        }
-        for (int i = 5; i <= Math.sqrt(n); i = i + 6) {
-            if (n % i == 0 || n % (i + 2) == 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    /**
-     * Calcula el factorial de un número.
-     *
-     * @param n El número para el que se desea calcular el factorial.
-     * @return El factorial del número.
-     */
-    public static int factorial(int n) {
-        if (n == 1) {
-            return 1;
-        } else {
-            return (n * factorial(n - 1));
-        }
-    }
-
-    /**
+public class MapaSecundario {
+        /**
      * Comprueba si hay duplicados en un conjunto (Set) de números y los muestra
      * por consola.
      *
@@ -178,6 +139,7 @@ public class Librerias {
      * Encuentra el primer elemento en una colección que cumple un predicado
      * dado.
      *
+     * @param <T>
      * @param collection la colección de elementos en la que buscar
      * @param predicate el predicado a evaluar para cada elemento
      * @return un Optional que contiene el primer elemento que cumple el
@@ -195,6 +157,7 @@ public class Librerias {
     /**
      * Devuelve el índice de la primera ocurrencia de un valor en una colección.
      *
+     * @param <T>
      * @param collection la colección en la que buscar
      * @param value el valor a buscar
      * @return el índice de la primera ocurrencia del valor, o -1 si no está
@@ -215,6 +178,7 @@ public class Librerias {
      * Devuelve una nueva colección que contiene únicamente los elementos únicos
      * de una colección dada.
      *
+     * @param <T>
      * @param collection la colección de elementos
      * @return una nueva colección que contiene únicamente los elementos únicos
      * de la colección original
@@ -258,6 +222,7 @@ public class Librerias {
     /**
      * Cuenta el número de ocurrencias de cada elemento en una colección dada.
      *
+     * @param <T>
      * @param collection la colección de elementos
      * @return un mapa que asocia cada elemento con su número de ocurrencias en
      * la colección
@@ -273,6 +238,7 @@ public class Librerias {
     /**
      * Concatena varias colecciones en una sola.
      *
+     * @param <T>
      * @param collections las colecciones a concatenar
      * @return una nueva colección que contiene todos los elementos de las
      * colecciones dadas
@@ -289,6 +255,7 @@ public class Librerias {
      * Devuelve una nueva colección que contiene los elementos comunes a dos
      * colecciones dadas.
      *
+     * @param <T>
      * @param collection1 la primera colección
      * @param collection2 la segunda colección
      * @return una nueva colección que contiene los elementos comunes a ambas
@@ -303,6 +270,7 @@ public class Librerias {
     /**
      * Divide una lista en particiones de un tamaño dado.
      *
+     * @param <T>
      * @param list la lista que se quiere particionar
      * @param size el tamaño de cada partición
      * @return una lista de particiones de tamaño "size"
@@ -323,6 +291,7 @@ public class Librerias {
      *
      * Ordena una lista utilizando un comparador dado.
      *
+     * @param <T>
      * @param list la lista que se quiere ordenar
      * @param comparator el comparador que se utilizará para ordenar la lista
      */
@@ -334,6 +303,7 @@ public class Librerias {
      *
      * Fusiona dos colecciones ordenadas en una única colección ordenada.
      *
+     * @param <T>
      * @param collection1 la primera colección ordenada
      * @param collection2 la segunda colección ordenada
      * @return una lista que contiene todos los elementos de ambas colecciones,
@@ -362,6 +332,7 @@ public class Librerias {
      *
      * Une dos listas en una única lista.
      *
+     * @param <T>
      * @param list1 la primera lista
      * @param list2 la segunda lista
      * @return una lista que contiene todos los elementos de ambas listas
@@ -376,6 +347,7 @@ public class Librerias {
      *
      * Convierte una colección en un array del tipo especificado.
      *
+     * @param <T>
      * @param collection la colección que se quiere convertir en array
      * @param type el tipo de los elementos del array resultante
      * @return un array que contiene los elementos de la colección
@@ -394,6 +366,7 @@ public class Librerias {
      * Devuelve una sublista de la lista original desde el índice fromIndex
      * hasta el índice toIndex.
      *
+     * @param <T>
      * @param list La lista original.
      * @param fromIndex El índice inicial de la sublista.
      * @param toIndex El índice final de la sublista.
@@ -413,6 +386,7 @@ public class Librerias {
      * Devuelve una lista que contiene los elementos de la primera lista que no
      * se encuentran en la segunda lista.
      *
+     * @param <T>
      * @param list1 La primera lista.
      * @param list2 La segunda lista.
      * @return La lista de elementos diferentes.
@@ -431,6 +405,7 @@ public class Librerias {
      * Devuelve una lista que contiene los mismos elementos que la lista
      * original pero en orden inverso.
      *
+     * @param <T>
      * @param list La lista original.
      * @return La lista invertida.
      */
@@ -444,6 +419,7 @@ public class Librerias {
      * Devuelve una lista que contiene los mismos elementos que la lista
      * original pero sin duplicados.
      *
+     * @param <T>
      * @param list La lista original.
      * @return La lista sin duplicados.
      */
@@ -456,6 +432,8 @@ public class Librerias {
      * Devuelve un mapa ordenado por los valores de sus entradas de forma
      * ascendente.
      *
+     * @param <K>
+     * @param <V>
      * @param map El mapa original.
      * @return El mapa ordenado por valores ascendentes.
      */
@@ -473,6 +451,8 @@ public class Librerias {
      * Devuelve un mapa ordenado por los valores de sus entradas de forma
      * descendente.
      *
+     * @param <K>
+     * @param <V>
      * @param map El mapa original.
      * @return El mapa ordenado por valores descendentes.
      */
@@ -491,6 +471,8 @@ public class Librerias {
      * Devuelve una lista de claves ordenadas según el valor asociado en el mapa
      * de entrada.
      *
+     * @param <K>
+     * @param <V>
      * @param map el mapa de entrada.
      * @return una lista de claves ordenadas según el valor asociado.
      */
@@ -509,6 +491,8 @@ public class Librerias {
      * Devuelve una lista de valores ordenados según las claves en el mapa de
      * entrada.
      *
+     * @param <K>
+     * @param <V>
      * @param map el mapa de entrada.
      * @return una lista de valores ordenados según las claves.
      */
@@ -526,6 +510,8 @@ public class Librerias {
      *
      * Devuelve una lista de valores únicos en el mapa de entrada.
      *
+     * @param <K>
+     * @param <V>
      * @param map el mapa de entrada.
      * @return una lista de valores únicos.
      */
@@ -538,6 +524,8 @@ public class Librerias {
      *
      * Devuelve una lista de claves únicas en el mapa de entrada.
      *
+     * @param <K>
+     * @param <V>
      * @param map el mapa de entrada.
      * @return una lista de claves únicas.
      */
@@ -551,6 +539,8 @@ public class Librerias {
      * Devuelve un mapa que tiene los valores del mapa de entrada como claves y
      * las claves del mapa de entrada como valores.
      *
+     * @param <K>
+     * @param <V>
      * @param map el mapa de entrada.
      * @return un mapa invertido.
      */
@@ -566,6 +556,8 @@ public class Librerias {
      *
      * Devuelve un nuevo mapa que es la unión de los dos mapas de entrada.
      *
+     * @param <K>
+     * @param <V>
      * @param map1 el primer mapa de entrada.
      * @param map2 el segundo mapa de entrada.
      * @return un nuevo mapa que es la unión de los dos mapas de entrada.
@@ -580,6 +572,8 @@ public class Librerias {
      *
      * Devuelve un mapa filtrado por una condición de clave y valor dada.
      *
+     * @param <K>
+     * @param <V>
      * @param map el mapa de entrada.
      * @param condition la condición de clave y valor para filtrar el mapa.
      * @return un mapa filtrado por la condición de clave y valor dada.
@@ -598,6 +592,8 @@ public class Librerias {
      *
      * Devuelve el valor medio de los valores numéricos en el mapa de entrada.
      *
+     * @param <K>
+     * @param <V>
      * @param map el mapa de entrada.
      * @return el valor medio de los valores numéricos en el mapa de entrada.
      */
@@ -614,6 +610,8 @@ public class Librerias {
      * Devuelve una sublista de valores en el mapa de entrada, desde el índice
      * inicial (inclusive) hasta el índice final (exclusive).
      *
+     * @param <K>
+     * @param <V>
      * @param map el mapa de entrada.
      * @param fromIndex el índice inicial (inclusive).
      * @param toIndex el índice final (exclusive).
@@ -683,142 +681,6 @@ public class Librerias {
         return map;
     }
 
-    /**
-     * Devuelve la suma de los elementos de un arreglo dado.
-     *
-     * @param array el arreglo del cual obtener la suma de elementos
-     * @return la suma de los elementos del arreglo
-     */
-    public static double sumaElementosArray(double[] array) {
-        double sum = 0.0;
-        for (double d : array) {
-            sum += d;
-        }
-        return sum;
-    }
-
-    /**
-     * Devuelve el elemento máximo de un arreglo dado.
-     *
-     * @param array el arreglo del cual obtener el elemento máximo
-     * @return el elemento máximo del arreglo
-     */
-    public static double maxElementoArray(double[] array) {
-        double max = array[0];
-        for (double d : array) {
-            if (d > max) {
-                max = d;
-            }
-        }
-        return max;
-    }
-
-    /**
-     * Devuelve el elemento mínimo de un array de números.
-     *
-     * @param array el array de números del que se desea obtener el mínimo
-     * @return el elemento mínimo del array
-     */
-    public static double minElementoArray(double[] array) {
-        double min = array[0];
-        for (double d : array) {
-            if (d < min) {
-                min = d;
-            }
-        }
-        return min;
-    }
-
-    /**
-     * Ordena un array de números en orden descendente.
-     *
-     * @param array el array de números que se desea ordenar
-     */
-    public static void ordenaArrayDescendente(double[] array) {
-        Arrays.sort(array);
-        for (int i = 0; i < array.length / 2; i++) {
-            double temp = array[i];
-            array[i] = array[array.length - 1 - i];
-            array[array.length - 1 - i] = temp;
-        }
-    }
-
-    /**
-     * Devuelve la mediana de un array de números.
-     *
-     * @param array el array de números del que se desea obtener la mediana
-     * @return la mediana del array
-     */
-    public static double medianaDeArray(double[] array) {
-        double median = 0.0;
-        Arrays.sort(array);
-        if (array.length % 2 == 0) {
-            median = (array[array.length / 2] + array[array.length / 2 - 1]) / 2.0;
-        } else {
-            median = array[array.length / 2];
-        }
-        return median;
-    }
-
-    /**
-     * Cuenta el número de elementos distintos en un array de números.
-     *
-     * @param array el array de números del que se desea contar los elementos
-     * distintos
-     * @return el número de elementos distintos en el array
-     */
-    public static int cuentaElementosDistintos(double[] array) {
-        Set<Double> set = new HashSet<>();
-        for (double d : array) {
-            set.add(d);
-        }
-        return set.size();
-    }
-
-    /**
-     * Elimina los elementos duplicados de un array de números y devuelve el
-     * resultado.
-     *
-     * @param array el array de números del que se desea eliminar los duplicados
-     * @return un nuevo array que contiene los elementos únicos del array
-     * original
-     */
-    public static double[] quitaDuplicadosArray(double[] array) {
-        Set<Double> set = new LinkedHashSet<>();
-        for (double d : array) {
-            set.add(d);
-        }
-        double[] result = new double[set.size()];
-        int i = 0;
-        for (double d : set) {
-            result[i++] = d;
-        }
-        return result;
-    }
-
-    /**
-     * Combina dos arrays de números en uno solo.
-     *
-     * @param array1 el primer array de números a combinar
-     * @param array2 el segundo array de números a combinar
-     * @return un nuevo array que contiene los elementos de ambos arrays
-     */
-    public static double[] juntaArrays(double[] array1, double[] array2) {
-        double[] result = new double[array1.length + array2.length];
-        System.arraycopy(array1, 0, result, 0, array1.length);
-        System.arraycopy(array2, 0, result, array1.length, array2.length);
-        return result;
-    }
-
-    /**
-     * Convierte un array en una lista.
-     *
-     * @param array el array que se desea convertir en una lista
-     * @return una lista que contiene los elementos del array
-     */
-    public static <T> List<T> arrayALista(T[] array) {
-        return Arrays.asList(array);
-    }
 
     /**
      *
@@ -848,48 +710,4 @@ public class Librerias {
         return collection.toArray(array);
     }
 
-    /**
-     *
-     * Clase para comparar dos strings en función del número de vocales que
-     * contienen.
-     *
-     * El comparador es descendente, es decir, las palabras con mayor número de
-     * vocales se sitúan antes.
-     */
-    public class ComparadorNumVocalesDesc implements Comparator<String> {
-
-        @Override
-        public int compare(String o1, String o2) {
-            int vocaleso1, vocaleso2;
-            vocaleso1 = cuentaVocales(o1);
-            vocaleso2 = cuentaVocales(o2);
-            if (vocaleso1 - vocaleso2 == 0) {
-                return 1;
-            } else {
-                return vocaleso2 - vocaleso1;
-            }
-        }
-
-        /**
-         *
-         * Método para comparar dos strings en función del número de vocales que
-         * contienen. El comparador es descendente, es decir, las palabras con
-         * mayor número de vocales se sitúan antes.
-         *
-         * @param o1 el primer string a comparar
-         * @param o2 el segundo string a comparar
-         * @return un número entero que indica si el primer string es mayor,
-         * menor o igual al segundo string.
-         */
-        private int cuentaVocales(String palabra) {
-            int cont = 0;
-            for (int i = 0; i < palabra.length(); i++) {
-                palabra = palabra.toLowerCase();
-                if (palabra.charAt(i) == 'a' || palabra.charAt(i) == 'e' || palabra.charAt(i) == 'i' || palabra.charAt(i) == 'o' || palabra.charAt(i) == 'u') {
-                    cont++;
-                }
-            }
-            return cont;
-        }
-    }
 }

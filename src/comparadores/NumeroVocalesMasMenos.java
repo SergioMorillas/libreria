@@ -1,4 +1,4 @@
-package libreriaAparte;
+package comparadores;
 
 import java.util.Comparator;
 import java.util.regex.Pattern;

@@ -1,10 +1,10 @@
-package Mapa;
+package coleccion;
 
 import java.util.*;
 
 public class ColeccionesMapas {
 
-    
+    // <editor-fold defaultstate="collapsed" desc="Metodos especiales">
     //METODOS FUNCIONALES WRAPPERS
     /*
     valueOf
@@ -61,8 +61,12 @@ public class ColeccionesMapas {
     TreeMap
     LinkedHashMap -- cola
     */
+    //</editor-fold>
     
-    //FUNCION QUE MUESTRA CUALQUIER COLECCION
+    /**
+     * Metodo que muestra una coleccion por pantalla
+     * @param c Coleccion a mostrar
+     */
     public static void muestraColeccion (Collection c) {
         Iterator it = c.iterator();
         
@@ -71,7 +75,10 @@ public class ColeccionesMapas {
         }
     }
 
-    //FUNCION QUE MUESTRA EL ARRAYLIST
+    /**
+     * Metodo que muestra un arraylist por pantalla
+     * @param al ArrayList a mostrar
+     */
     public static void muestraList (ArrayList al) {
         
         for (int i = 0; i < al.size(); i++) {
@@ -80,8 +87,11 @@ public class ColeccionesMapas {
         
     }
         
-    //FUNCION QUE MUESTRA EL MAPA INTRODUCIDO
-    public static void muestraMapaArrays (Map mapa) {
+/**
+ * Metodo que muestra un mapa
+ * @param mapa mapa a mostrar
+ */
+    public static void muestraMapa (Map mapa) {
         
         Set s = mapa.keySet();
         Iterator it = s.iterator();
@@ -93,14 +103,15 @@ public class ColeccionesMapas {
         
     }
     
-    //FUNCION QUE RELLENA UNA COLECCION A PARTIR DE UN ARRAY
-    public static ArrayList rellenaColeccion (int[] array) {
-        
-        ArrayList al= new ArrayList();
-        
+    /**
+     * Metodo que rellena una coleccion con un array 
+     * @param array array con los valores ya dados
+     * @return Coleccion
+     */
+    public static Collection rellenaColeccion (int[] array) {
+        Collection al= new ArrayList();
         for (int i = 0; i < array.length; i++) {
             al.add(array[i]);
-            
         }
         return al;
     }

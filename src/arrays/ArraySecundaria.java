@@ -1,6 +1,7 @@
-package Array;
+package arrays;
 
-import java.util.Scanner;
+import java.util.*;
+
 
 /**
  *
@@ -290,4 +291,143 @@ public class ArraySecundaria {
         }
     }
 
+    
+    /**
+     * Devuelve la suma de los elementos de un arreglo dado.
+     *
+     * @param array el arreglo del cual obtener la suma de elementos
+     * @return la suma de los elementos del arreglo
+     */
+    public static double sumaElementosArray(double[] array) {
+        double sum = 0.0;
+        for (double d : array) {
+            sum += d;
+        }
+        return sum;
+    }
+
+    /**
+     * Devuelve el elemento máximo de un arreglo dado.
+     *
+     * @param array el arreglo del cual obtener el elemento máximo
+     * @return el elemento máximo del arreglo
+     */
+    public static double maxElementoArray(double[] array) {
+        double max = array[0];
+        for (double d : array) {
+            if (d > max) {
+                max = d;
+            }
+        }
+        return max;
+    }
+
+    /**
+     * Devuelve el elemento mínimo de un array de números.
+     *
+     * @param array el array de números del que se desea obtener el mínimo
+     * @return el elemento mínimo del array
+     */
+    public static double minElementoArray(double[] array) {
+        double min = array[0];
+        for (double d : array) {
+            if (d < min) {
+                min = d;
+            }
+        }
+        return min;
+    }
+
+    /**
+     * Ordena un array de números en orden descendente.
+     *
+     * @param array el array de números que se desea ordenar
+     */
+    public static void ordenaArrayDescendente(double[] array) {
+        Arrays.sort(array);
+        for (int i = 0; i < array.length / 2; i++) {
+            double temp = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = temp;
+        }
+    }
+
+    /**
+     * Devuelve la mediana de un array de números.
+     *
+     * @param array el array de números del que se desea obtener la mediana
+     * @return la mediana del array
+     */
+    public static double medianaDeArray(double[] array) {
+        double median = 0.0;
+        Arrays.sort(array);
+        if (array.length % 2 == 0) {
+            median = (array[array.length / 2] + array[array.length / 2 - 1]) / 2.0;
+        } else {
+            median = array[array.length / 2];
+        }
+        return median;
+    }
+
+    /**
+     * Cuenta el número de elementos distintos en un array de números.
+     *
+     * @param array el array de números del que se desea contar los elementos
+     * distintos
+     * @return el número de elementos distintos en el array
+     */
+    public static int cuentaElementosDistintos(double[] array) {
+        Set<Double> set = new HashSet<>();
+        for (double d : array) {
+            set.add(d);
+        }
+        return set.size();
+    }
+
+    /**
+     * Elimina los elementos duplicados de un array de números y devuelve el
+     * resultado.
+     *
+     * @param array el array de números del que se desea eliminar los duplicados
+     * @return un nuevo array que contiene los elementos únicos del array
+     * original
+     */
+    public static double[] quitaDuplicadosArray(double[] array) {
+        Set<Double> set = new LinkedHashSet<>();
+        for (double d : array) {
+            set.add(d);
+        }
+        double[] result = new double[set.size()];
+        int i = 0;
+        for (double d : set) {
+            result[i++] = d;
+        }
+        return result;
+    }
+
+    /**
+     * Combina dos arrays de números en uno solo.
+     *
+     * @param array1 el primer array de números a combinar
+     * @param array2 el segundo array de números a combinar
+     * @return un nuevo array que contiene los elementos de ambos arrays
+     */
+    public static double[] juntaArrays(double[] array1, double[] array2) {
+        double[] result = new double[array1.length + array2.length];
+        System.arraycopy(array1, 0, result, 0, array1.length);
+        System.arraycopy(array2, 0, result, array1.length, array2.length);
+        return result;
+    }
+
+    /**
+     * Convierte un array en una lista.
+     *
+     * @param <T>
+     * @param array el array que se desea convertir en una lista
+     * @return una lista que contiene los elementos del array
+     */
+    public static <T> List<T> arrayALista(T[] array) {
+        return Arrays.asList(array);
+    }
+    
 }

@@ -1,4 +1,4 @@
-package Array;
+package arrays;
 
 import static java.lang.Integer.MAX_VALUE;
 
